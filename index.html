@@ -1,750 +1,482 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Corp | Enterprise Digital Solutions</title>
-    <meta name="description" content="Leading provider of enterprise digital solutions. Transform your business with innovative technology, strategic consulting, and scalable solutions.">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #ffffff;
-            color: #0a0a2a;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Custom Variables */
-        :root {
-            --primary: #0066ff;
-            --primary-dark: #0052cc;
-            --secondary: #00c6fb;
-            --accent: #ff6b4a;
-            --dark: #0a0a2a;
-            --gray: #6c6c8a;
-            --light-gray: #f5f7ff;
-            --white: #ffffff;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 20px 0;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        nav.scrolled {
-            padding: 16px 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .btn-nav {
-            background: var(--primary);
-            color: white !important;
-            padding: 10px 24px;
-            border-radius: 40px;
-            transition: all 0.3s !important;
-        }
-
-        .btn-nav:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            font-size: 24px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* Buttons */
-        .btn-primary {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 14px 36px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px -5px rgba(0, 102, 255, 0.3);
-        }
-
-        .btn-outline {
-            display: inline-block;
-            background: transparent;
-            color: var(--primary);
-            padding: 14px 36px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 2px solid var(--primary);
-            transition: all 0.3s;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 160px 0 100px;
-            background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 56px;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, var(--dark), var(--primary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero-text p {
-            font-size: 18px;
-            color: var(--gray);
-            margin-bottom: 32px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 40px;
-            margin-top: 48px;
-        }
-
-        .stat h3 {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--primary);
-        }
-
-        .stat p {
-            font-size: 14px;
-            color: var(--gray);
-            margin: 0;
-        }
-
-        .hero-image img {
-            width: 100%;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Clients Section */
-        .clients {
-            padding: 60px 0;
-            background: var(--light-gray);
-            text-align: center;
-        }
-
-        .clients p {
-            color: var(--gray);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 12px;
-            margin-bottom: 32px;
-        }
-
-        .client-logos {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .client-logos span {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--gray);
-            opacity: 0.6;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            font-size: 40px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 16px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--gray);
-            font-size: 18px;
-            margin-bottom: 60px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 40px 32px;
-            border-radius: 24px;
-            transition: all 0.3s;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
-        }
-
-        .service-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-
-        .service-icon i {
-            font-size: 28px;
-            color: white;
-        }
-
-        .service-card h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
-        }
-
-        .service-card p {
-            color: var(--gray);
-            line-height: 1.6;
-        }
-
-        /* About Section */
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 24px;
-        }
-
-        .about-content h2 {
-            font-size: 40px;
-            margin-bottom: 24px;
-        }
-
-        .about-content p {
-            color: var(--gray);
-            margin-bottom: 24px;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-top: 32px;
-        }
-
-        .features-list li {
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .features-list li i {
-            color: var(--primary);
-            font-size: 20px;
-        }
-
-        /* Portfolio Section */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .portfolio-item {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .portfolio-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .portfolio-item:hover .portfolio-image {
-            transform: scale(1.05);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            padding: 30px;
-            color: white;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .portfolio-overlay h4 {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .portfolio-overlay p {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        /* Testimonials */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .testimonial-card {
-            background: var(--light-gray);
-            padding: 32px;
-            border-radius: 24px;
-            transition: all 0.3s;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .testimonial-text {
-            font-size: 16px;
-            color: var(--gray);
-            margin-bottom: 24px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .testimonial-author img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .author-info h4 {
-            font-size: 16px;
-            margin-bottom: 4px;
-        }
-
-        .author-info p {
-            font-size: 12px;
-            color: var(--gray);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--dark), #1a1a4a);
-            color: white;
-            text-align: center;
-            border-radius: 32px;
-            margin: 0 40px;
-        }
-
-        .cta-content {
-            padding: 80px 60px;
-        }
-
-        .cta-content h2 {
-            font-size: 40px;
-            margin-bottom: 16px;
-        }
-
-        .cta-content p {
-            opacity: 0.8;
-            margin-bottom: 32px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn-cta {
-            background: white;
-            color: var(--primary);
-            padding: 14px 36px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-
-        .btn-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255,255,255,0.2);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 60px 0 30px;
-            margin-top: 100px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-col h4 {
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-
-        .footer-col p,
-        .footer-col a {
-            color: #aaa;
-            text-decoration: none;
-            line-height: 2;
-            font-size: 14px;
-        }
-
-        .footer-col a:hover {
-            color: var(--primary);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 16px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            width: 36px;
-            height: 36px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #333;
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-content,
-            .about-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .services-grid,
-            .portfolio-grid,
-            .testimonials-grid,
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 24px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .nav-links.active {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: white;
-                padding: 32px;
-                gap: 20px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero-text h1 {
-                font-size: 36px;
-            }
-
-            .section-title {
-                font-size: 28px;
-            }
-
-            .services-grid,
-            .portfolio-grid,
-            .testimonials-grid,
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .client-logos {
-                justify-content: center;
-            }
-
-            .cta-section {
-                margin: 0 20px;
-            }
-
-            .cta-content {
-                padding: 40px 24px;
-            }
-
-            .cta-content h2 {
-                font-size: 28px;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Gracedev · Portfolio Profesional</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0A0A0A;  /* hitam pekat */
+      color: #E4E4E7;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* warna aksen orange premium */
+    :root {
+      --orange: #F97316;
+      --orange-dark: #EA580C;
+      --orange-glow: rgba(249, 115, 22, 0.3);
+      --black-card: #111111;
+      --black-deep: #050505;
+      --gray-border: #262626;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header / navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--gray-border);
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #FFFFFF 30%, var(--orange) 80%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .logo span {
+      color: var(--orange);
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #D4D4D8;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    /* Hero section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4rem 0 3rem 0;
+      gap: 2rem;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-badge {
+      background: rgba(249, 115, 22, 0.12);
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--orange);
+      margin-bottom: 1.5rem;
+      border: 0.5px solid rgba(249, 115, 22, 0.3);
+    }
+    .hero-content h1 {
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+    .hero-content h1 .highlight {
+      color: var(--orange);
+      border-bottom: 3px solid var(--orange);
+      display: inline-block;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: #A1A1AA;
+      max-width: 550px;
+      margin-bottom: 2rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--orange);
+      border: none;
+      padding: 0.85rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #0A0A0A;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .btn-primary i {
+      font-size: 1.1rem;
+    }
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--gray-border);
+      padding: 0.85rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #E4E4E7;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .btn-outline:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+    .hero-image {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+    }
+    .code-icon {
+      background: #111;
+      border-radius: 30px;
+      padding: 1.5rem;
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.6);
+    }
+    .code-icon i {
+      font-size: 9rem;
+      color: var(--orange);
+      opacity: 0.9;
+    }
+
+    /* section skills */
+    .section {
+      padding: 5rem 0;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 3px;
+      background: var(--orange);
+      border-radius: 3px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+    .skill-card {
+      background: var(--black-card);
+      border: 1px solid var(--gray-border);
+      border-radius: 24px;
+      padding: 1.8rem 1.5rem;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(2px);
+    }
+    .skill-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px -10px rgba(249,115,22,0.15);
+    }
+    .skill-icon {
+      font-size: 2.5rem;
+      color: var(--orange);
+      margin-bottom: 1.2rem;
+    }
+    .skill-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .skill-card p {
+      color: #A1A1AA;
+      font-size: 0.9rem;
+    }
+
+    /* contact / cta */
+    .contact-block {
+      background: linear-gradient(145deg, #0E0E0E 0%, #080808 100%);
+      border-radius: 40px;
+      padding: 3rem 2.5rem;
+      border: 1px solid #2A2A2A;
+      margin-top: 1rem;
+    }
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+    .contact-left h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .contact-left p {
+      color: #B0B0B8;
+      max-width: 400px;
+    }
+    .contact-buttons {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .wa-btn, .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #1A1A1A;
+      padding: 0.9rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+      border: 1px solid #333;
+    }
+    .wa-btn {
+      color: #25D366;
+    }
+    .email-btn {
+      color: var(--orange);
+    }
+    .wa-btn i, .email-btn i {
+      font-size: 1.4rem;
+    }
+    .wa-btn:hover, .email-btn:hover {
+      background: #1f1f1f;
+      border-color: var(--orange);
+      transform: scale(1.02);
+    }
+
+    /* footer */
+    .footer {
+      border-top: 1px solid var(--gray-border);
+      padding: 2rem 0;
+      text-align: center;
+      color: #6B7280;
+      font-size: 0.85rem;
+    }
+
+    /* responsive */
+    @media (max-width: 850px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .section-title:after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+      }
+      .section-title {
+        text-align: center;
+        display: block;
+      }
+      .contact-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+      .contact-left p {
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="nav">
-        <div class="container nav-container">
-            <a href="#" class="logo">NEXUS</a>
-            <div class="nav-links" id="navLinks">
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#portfolio">Work</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#contact" class="btn-nav">Get in Touch</a>
-            </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1>Transform Your Business with Digital Excellence</h1>
-                <p>We help enterprises scale through innovative technology, strategic consulting, and world-class digital solutions. Your success is our mission.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">Start Your Journey</a>
-                    <a href="#services" class="btn-outline">Explore Solutions</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <h3>500+</h3>
-                        <p>Projects Delivered</p>
-                    </div>
-                    <div class="stat">
-                        <h3>98%</h3>
-                        <p>Client Satisfaction</p>
-                    </div>
-                    <div class="stat">
-                        <h3>24/7</h3>
-                        <p>Global Support</p>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://placehold.co/600x500/0066ff/white?text=Digital+Transformation" alt="Digital Transformation">
-            </div>
-        </div>
-    </section>
+<div class="container">
+  <!-- navbar -->
+  <nav class="navbar">
+    <div class="logo">Grace<span>dev</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#keahlian">Keahlian</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
 
-    <!-- Clients Section -->
-    <div class="clients">
-        <div class="container">
-            <p>TRUSTED BY INDUSTRY LEADERS</p>
-            <div class="client-logos">
-                <span>MICROSOFT</span>
-                <span>GOOGLE</span>
-                <span>AMAZON</span>
-                <span>SALESFORCE</span>
-                <span>ADOBE</span>
-            </div>
+  <!-- hero section / home -->
+  <section id="home">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-code"></i>  Full-Stack & Kreatif
         </div>
+        <h1>Halo, Saya <span class="highlight">Gracedev</span><br>Solusi Digital Profesional</h1>
+        <p class="hero-desc">
+          Spesialis dalam pengembangan web, analisis data, desain grafis & pengelolaan WordPress. 
+          Membantu bisnis dan individu menciptakan pengalaman digital yang modern & berdampak.
+        </p>
+        <div class="btn-group">
+          <a href="#keahlian" class="btn-primary"><i class="fas fa-arrow-down"></i> Eksplorasi Skill</a>
+          <a href="#kontak" class="btn-outline"><i class="fas fa-comment"></i> Hubungi Saya</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="code-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <h2 class="section-title">Core Services</h2>
-            <p class="section-subtitle">Comprehensive digital solutions tailored to your business needs</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Digital Strategy</h3>
-                    <p>Data-driven strategies to accelerate growth, optimize operations, and maximize ROI across all digital channels.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Custom, scalable web applications built with cutting-edge technologies for enterprise-grade performance.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile Solutions</h3>
-                    <p>Native and cross-platform mobile apps that deliver seamless
+  <!-- keahlian section -->
+  <section id="keahlian" class="section">
+    <h2 class="section-title">⚡ Keahlian Profesional</h2>
+    <div class="skills-grid">
+      <!-- data entry -->
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-table"></i></div>
+        <h3>Data Entry</h3>
+        <p>Akurasi tinggi, pengelolaan database, entri data cepat & rapi, spreadsheet expert.</p>
+      </div>
+      <!-- front end -->
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fab fa-react"></i></div>
+        <h3>Front End Dev</h3>
+        <p>React, Vue, Tailwind, HTML/CSS/JS. UI/UX modern & responsive.</p>
+      </div>
+      <!-- desain grafis -->
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-palette"></i></div>
+        <h3>Desain Grafis</h3>
+        <p>Adobe Photoshop, Figma, branding, ilustrasi, visual identity yang memukau.</p>
+      </div>
+      <!-- backend developer -->
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-server"></i></div>
+        <h3>Backend Developer</h3>
+        <p>Node.js, PHP (Laravel), API development, database MySQL/PostgreSQL.</p>
+      </div>
+      <!-- analisis data -->
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Analisis Data</h3>
+        <p>Python, Pandas, visualisasi data, insight bisnis, laporan interaktif.</p>
+      </div>
+      <!-- wordpress -->
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fab fa-wordpress"></i></div>
+        <h3>Pengembangan WordPress</h3>
+        <p>Custom themes, plugin, WooCommerce, optimasi kecepatan & SEO.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- kontak & tombol wa + email -->
+  <section id="kontak" class="section">
+    <div class="contact-block">
+      <div class="contact-flex">
+        <div class="contact-left">
+          <h2>Mari berkolaborasi ✨</h2>
+          <p>Butuh bantuan proyek digital? Saya siap membantu mewujudkan ide Anda menjadi nyata.</p>
+        </div>
+        <div class="contact-buttons">
+          <!-- Tombol WhatsApp (mengarah ke nomor +62 823-5249-0597) -->
+          <a href="https://wa.me/6282352490597?text=Halo%20Gracedev%2C%20saya%20tertarik%20dengan%20portofolio%20Anda.%20Mari%20berdiskusi!" 
+             class="wa-btn" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <!-- Tombol Email (mailto) -->
+          <a href="mailto:graceshalomitha08022012@gmail.com?subject=Halo%20Gracedev%20-%20Konsultasi%20Proyek&body=Saya%20tertarik%20dengan%20keahlian%20Anda.%20Mohon%20informasi%20lebih%20lanjut." 
+             class="email-btn">
+            <i class="fas fa-envelope"></i> Email Saya
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer sederhana -->
+  <footer class="footer">
+    <p>© 2025 Gracedev — Profesional Digital Solution |  Hitam · Orange Identity</p>
+    <p style="margin-top: 0.4rem; font-size: 0.75rem;">
+      <i class="fas fa-code"></i> data entry · front end · desain grafis · backend · analisis data · WordPress
+    </p>
+  </footer>
+</div>
+
+<!-- optional smooth scroll & interaksi -->
+<script>
+  // Smooth scroll untuk anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if(targetId === "#" || targetId === "") return;
+      const targetElement = document.querySelector(targetId);
+      if(targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // sedikit efek hover pada tombol tidak wajib, hanya untuk sentuhan
+  console.log("Portfolio Gracedev — siap membantu!");
+</script>
+</body>
+</html>
