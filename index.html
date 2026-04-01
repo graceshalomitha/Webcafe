@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Gracedev · Portfolio Profesional</title>
-  <!-- Google Fonts & Font Awesome -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>WildHorizon | Modern Zoo Experience</title>
+  <!-- Google Fonts & simple CSS reset -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -16,467 +16,546 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #0A0A0A;  /* hitam pekat */
-      color: #E4E4E7;
-      line-height: 1.5;
+      background-color: #fefaf5;
+      color: #1e2a2f;
+      line-height: 1.4;
       scroll-behavior: smooth;
-    }
-
-    /* warna aksen orange premium */
-    :root {
-      --orange: #F97316;
-      --orange-dark: #EA580C;
-      --orange-glow: rgba(249, 115, 22, 0.3);
-      --black-card: #111111;
-      --black-deep: #050505;
-      --gray-border: #262626;
     }
 
     .container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 32px;
     }
 
-    /* header / navbar */
-    .navbar {
+    /* header / navigation */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 252, 245, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 16px 0;
+    }
+
+    .nav-wrapper {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 0;
+      justify-content: space-between;
       flex-wrap: wrap;
-      border-bottom: 1px solid var(--gray-border);
+      gap: 20px;
     }
 
     .logo {
-      font-size: 1.9rem;
+      font-size: 1.8rem;
       font-weight: 800;
       letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #FFFFFF 30%, var(--orange) 80%);
-      -webkit-background-clip: text;
+      background: linear-gradient(135deg, #2b7a3e, #e0a82b);
       background-clip: text;
+      -webkit-background-clip: text;
       color: transparent;
     }
     .logo span {
-      color: var(--orange);
+      color: #d sixteen;
       background: none;
       -webkit-background-clip: unset;
       background-clip: unset;
+      color: #c57f1e;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
-      list-style: none;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
     }
     .nav-links a {
-      color: #D4D4D8;
       text-decoration: none;
       font-weight: 500;
-      transition: 0.2s;
+      color: #2c4238;
+      transition: color 0.2s;
       font-size: 1rem;
     }
     .nav-links a:hover {
-      color: var(--orange);
-    }
-
-    /* Hero section */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding: 4rem 0 3rem 0;
-      gap: 2rem;
-    }
-    .hero-content {
-      flex: 1;
-    }
-    .hero-badge {
-      background: rgba(249, 115, 22, 0.12);
-      display: inline-block;
-      padding: 0.3rem 1rem;
-      border-radius: 40px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--orange);
-      margin-bottom: 1.5rem;
-      border: 0.5px solid rgba(249, 115, 22, 0.3);
-    }
-    .hero-content h1 {
-      font-size: 3.4rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1.2rem;
-    }
-    .hero-content h1 .highlight {
-      color: var(--orange);
-      border-bottom: 3px solid var(--orange);
-      display: inline-block;
-    }
-    .hero-desc {
-      font-size: 1.1rem;
-      color: #A1A1AA;
-      max-width: 550px;
-      margin-bottom: 2rem;
-    }
-    .btn-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .btn-primary {
-      background: var(--orange);
-      border: none;
-      padding: 0.85rem 2rem;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 1rem;
-      color: #0A0A0A;
-      cursor: pointer;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-    .btn-primary i {
-      font-size: 1.1rem;
-    }
-    .btn-primary:hover {
-      background: var(--orange-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+      color: #e68a2e;
     }
     .btn-outline {
+      border: 1.5px solid #2b7a3e;
+      padding: 8px 20px;
+      border-radius: 60px;
       background: transparent;
-      border: 1.5px solid var(--gray-border);
-      padding: 0.85rem 2rem;
-      border-radius: 40px;
       font-weight: 600;
-      font-size: 1rem;
-      color: #E4E4E7;
-      cursor: pointer;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
+      color: #2b7a3e;
+      transition: all 0.2s;
     }
     .btn-outline:hover {
-      border-color: var(--orange);
-      color: var(--orange);
+      background: #2b7a3e;
+      color: white;
+      border-color: #2b7a3e;
+    }
+    .btn-primary {
+      background: #e68a2e;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(230, 138, 46, 0.2);
+    }
+    .btn-primary:hover {
+      background: #cc741c;
+      transform: scale(0.97);
+      box-shadow: 0 4px 12px rgba(230, 138, 46, 0.3);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1.5px solid #e0a82b;
+      padding: 10px 24px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #2c4238;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #e0a82b20;
+      border-color: #c57f1e;
+    }
+
+    /* hero section */
+    .hero {
+      padding: 64px 0 80px 0;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 48px;
+    }
+    .hero-content {
+      flex: 1.2;
+    }
+    .hero-badge {
+      background: #eef4e6;
+      color: #2b6e3c;
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .hero-content h1 {
+      font-size: 3.6rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #1e3a2f;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #4a5b55;
+      max-width: 520px;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
     }
     .hero-image {
-      flex: 0.8;
-      display: flex;
-      justify-content: center;
+      flex: 1;
+      border-radius: 48px;
+      overflow: hidden;
+      box-shadow: 0 30px 40px -20px rgba(0,0,0,0.25);
     }
-    .code-icon {
-      background: #111;
-      border-radius: 30px;
-      padding: 1.5rem;
-      border: 1px solid #2a2a2a;
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.6);
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
     }
-    .code-icon i {
-      font-size: 9rem;
-      color: var(--orange);
-      opacity: 0.9;
-    }
-
-    /* section skills */
-    .section {
-      padding: 5rem 0;
-    }
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 2.5rem;
-      position: relative;
-      display: inline-block;
-    }
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60%;
-      height: 3px;
-      background: var(--orange);
-      border-radius: 3px;
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.8rem;
-      margin-top: 1rem;
-    }
-    .skill-card {
-      background: var(--black-card);
-      border: 1px solid var(--gray-border);
-      border-radius: 24px;
-      padding: 1.8rem 1.5rem;
-      transition: all 0.25s ease;
-      backdrop-filter: blur(2px);
-    }
-    .skill-card:hover {
-      border-color: var(--orange);
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px -10px rgba(249,115,22,0.15);
-    }
-    .skill-icon {
-      font-size: 2.5rem;
-      color: var(--orange);
-      margin-bottom: 1.2rem;
-    }
-    .skill-card h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-    .skill-card p {
-      color: #A1A1AA;
-      font-size: 0.9rem;
-    }
-
-    /* contact / cta */
-    .contact-block {
-      background: linear-gradient(145deg, #0E0E0E 0%, #080808 100%);
-      border-radius: 40px;
-      padding: 3rem 2.5rem;
-      border: 1px solid #2A2A2A;
-      margin-top: 1rem;
-    }
-    .contact-flex {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2rem;
-    }
-    .contact-left h2 {
-      font-size: 1.9rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .contact-left p {
-      color: #B0B0B8;
-      max-width: 400px;
-    }
-    .contact-buttons {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .wa-btn, .email-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: #1A1A1A;
-      padding: 0.9rem 1.8rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.2s;
-      border: 1px solid #333;
-    }
-    .wa-btn {
-      color: #25D366;
-    }
-    .email-btn {
-      color: var(--orange);
-    }
-    .wa-btn i, .email-btn i {
-      font-size: 1.4rem;
-    }
-    .wa-btn:hover, .email-btn:hover {
-      background: #1f1f1f;
-      border-color: var(--orange);
+    .hero-image:hover img {
       transform: scale(1.02);
     }
 
-    /* footer */
-    .footer {
-      border-top: 1px solid var(--gray-border);
-      padding: 2rem 0;
+    /* featured animals / highlights */
+    .section-title {
       text-align: center;
-      color: #6B7280;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1e3a2f;
+    }
+    .section-sub {
+      text-align: center;
+      color: #5e7670;
+      max-width: 680px;
+      margin: 0 auto 48px auto;
+      font-size: 1.1rem;
+    }
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+    .animal-card {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      width: 280px;
+      transition: all 0.25s;
+      box-shadow: 0 12px 24px -12px rgba(0,0,0,0.08);
+      border: 1px solid #f0e6da;
+    }
+    .animal-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 30px -15px rgba(0,0,0,0.15);
+    }
+    .animal-img {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+    .animal-card h3 {
+      font-size: 1.6rem;
+      margin: 18px 20px 6px;
+      font-weight: 700;
+    }
+    .animal-card p {
+      margin: 0 20px 20px;
+      color: #5b6e66;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    /* experiences */
+    .experiences {
+      background: #f0f2ec;
+      border-radius: 64px;
+      margin: 80px 0;
+      padding: 64px 32px;
+    }
+    .exp-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    .exp-item {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+      background: rgba(255,255,245,0.7);
+      padding: 28px 16px;
+      border-radius: 40px;
+      backdrop-filter: blur(2px);
+    }
+    .exp-item i {
+      font-size: 2.8rem;
+      color: #e68a2e;
+      margin-bottom: 16px;
+    }
+    .exp-item h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    /* ticket & plan */
+    .ticket-section {
+      display: flex;
+      flex-wrap: wrap;
+      background: #fff7ed;
+      border-radius: 56px;
+      overflow: hidden;
+      margin: 70px 0;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.05);
+    }
+    .ticket-info {
+      flex: 1;
+      padding: 48px 44px;
+    }
+    .ticket-info h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .pricing {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #2b7a3e;
+      margin: 24px 0 16px;
+    }
+    .pricing small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #6b7b73;
+    }
+    .ticket-features {
+      list-style: none;
+      margin: 24px 0 32px;
+    }
+    .ticket-features li {
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ticket-features i {
+      color: #e68a2e;
+      width: 24px;
+    }
+    .ticket-image {
+      flex: 1;
+      background: url('https://placehold.co/600x500/f5e7d9/9b7b5c?text=Zoo+Adventure') center/cover;
+      min-height: 320px;
+    }
+    /* keep real image for better look -> using unsplash placeholder */
+    .ticket-image {
+      background-image: linear-gradient(115deg, #e0b27a30, #3b6e4e40), url('https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?auto=compress&cs=tinysrgb&w=800');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* testimonial */
+    .testimonial {
+      background: #ffffff;
+      border-radius: 48px;
+      padding: 48px 40px;
+      margin: 60px 0;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.03);
+      border: 1px solid #efe2d4;
+    }
+    .quote {
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.4;
+      max-width: 800px;
+      margin: 0 auto 24px;
+      text-align: center;
+      font-style: italic;
+      color: #2c4b3e;
+    }
+    .author {
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* footer */
+    footer {
+      background: #1f2e28;
+      color: #d9e1db;
+      border-radius: 40px 40px 0 0;
+      padding: 56px 0 32px;
+      margin-top: 60px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      color: #f5bc70;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+    .footer-col p, .footer-col a {
+      color: #cbdcd3;
+      text-decoration: none;
+      line-height: 1.8;
+      display: block;
+    }
+    .social-icons i {
+      font-size: 1.5rem;
+      margin-right: 16px;
+      transition: 0.2s;
+      color: #eec68b;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid #3e554b;
       font-size: 0.85rem;
     }
 
-    /* responsive */
-    @media (max-width: 850px) {
-      .container {
-        padding: 0 1.5rem;
-      }
-      .navbar {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-      .btn-group {
-        justify-content: center;
-      }
-      .section-title:after {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-      }
-      .section-title {
-        text-align: center;
-        display: block;
-      }
-      .contact-flex {
-        flex-direction: column;
-        text-align: center;
-      }
-      .contact-left p {
-        margin: 0 auto;
-      }
+    @media (max-width: 800px) {
+      .hero-content h1 { font-size: 2.4rem; }
+      .container { padding: 0 24px; }
+      .hero-grid { flex-direction: column; }
+      .ticket-section { flex-direction: column; }
+      .section-title { font-size: 2rem; }
+      .nav-links { gap: 18px; }
+    }
+    @media (max-width: 550px) {
+      .nav-wrapper { flex-direction: column; align-items: flex-start; }
+      .btn-primary { padding: 10px 20px; }
+    }
+    img {
+      max-width: 100%;
+      vertical-align: middle;
+    }
+    .hero-image img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <!-- navbar -->
-  <nav class="navbar">
-    <div class="logo">Grace<span>dev</span></div>
-    <ul class="nav-links">
-      <li><a href="#home">Beranda</a></li>
-      <li><a href="#keahlian">Keahlian</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-    </ul>
-  </nav>
+<header>
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="logo">WILD<span>HORIZON</span> <i class="fas fa-paw" style="font-size: 1.4rem; color:#e68a2e;"></i></div>
+      <div class="nav-links">
+        <a href="#">Experience</a>
+        <a href="#">Animals</a>
+        <a href="#">Events</a>
+        <a href="#">Conservation</a>
+        <a href="#" class="btn-outline">Membership</a>
+        <a href="#" class="btn-primary" style="padding: 8px 24px;">Tickets</a>
+      </div>
+    </div>
+  </div>
+</header>
 
-  <!-- hero section / home -->
-  <section id="home">
-    <div class="hero">
+<main>
+  <!-- Hero -->
+  <div class="container hero">
+    <div class="hero-grid">
       <div class="hero-content">
-        <div class="hero-badge">
-          <i class="fas fa-code"></i>  Full-Stack & Kreatif
-        </div>
-        <h1>Halo, Saya <span class="highlight">Gracedev</span><br>Solusi Digital Profesional</h1>
-        <p class="hero-desc">
-          Spesialis dalam pengembangan web, analisis data, desain grafis & pengelolaan WordPress. 
-          Membantu bisnis dan individu menciptakan pengalaman digital yang modern & berdampak.
-        </p>
-        <div class="btn-group">
-          <a href="#keahlian" class="btn-primary"><i class="fas fa-arrow-down"></i> Eksplorasi Skill</a>
-          <a href="#kontak" class="btn-outline"><i class="fas fa-comment"></i> Hubungi Saya</a>
+        <div class="hero-badge"><i class="fas fa-tree"></i>  Open daily • 9am – 6pm</div>
+        <h1>Where wild<br>stories begin.</h1>
+        <p>Step into a world of wonder — 200+ species, immersive habitats, and unforgettable moments for the whole family.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn-primary">Book your visit →</a>
+          <a href="#" class="btn-secondary"><i class="fas fa-play"></i>  Virtual tour</a>
         </div>
       </div>
       <div class="hero-image">
-        <div class="code-icon">
-          <i class="fas fa-laptop-code"></i>
-        </div>
+        <img src="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Elephant at WildHorizon zoo">
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- keahlian section -->
-  <section id="keahlian" class="section">
-    <h2 class="section-title">⚡ Keahlian Profesional</h2>
-    <div class="skills-grid">
-      <!-- data entry -->
-      <div class="skill-card">
-        <div class="skill-icon"><i class="fas fa-table"></i></div>
-        <h3>Data Entry</h3>
-        <p>Akurasi tinggi, pengelolaan database, entri data cepat & rapi, spreadsheet expert.</p>
+  <!-- Featured animals -->
+  <div class="container">
+    <h2 class="section-title">Meet our wild residents</h2>
+    <p class="section-sub">From savannah giants to rainforest dwellers — every habitat tells a story.</p>
+    <div class="card-grid">
+      <div class="animal-card">
+        <div class="animal-img" style="background-image: url('https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+        <h3>African Elephant</h3>
+        <p>Gentle giants roaming our 5-acre savannah. Daily keeper talks at 11am.</p>
       </div>
-      <!-- front end -->
-      <div class="skill-card">
-        <div class="skill-icon"><i class="fab fa-react"></i></div>
-        <h3>Front End Dev</h3>
-        <p>React, Vue, Tailwind, HTML/CSS/JS. UI/UX modern & responsive.</p>
+      <div class="animal-card">
+        <div class="animal-img" style="background-image: url('https://images.pexels.com/photos/792381/pexels-photo-792381.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+        <h3>Sumatran Tiger</h3>
+        <p>Majestic predators in a lush rainforest zone. See them play & swim.</p>
       </div>
-      <!-- desain grafis -->
-      <div class="skill-card">
-        <div class="skill-icon"><i class="fas fa-palette"></i></div>
-        <h3>Desain Grafis</h3>
-        <p>Adobe Photoshop, Figma, branding, ilustrasi, visual identity yang memukau.</p>
+      <div class="animal-card">
+        <div class="animal-img" style="background-image: url('https://images.pexels.com/photos/128756/pexels-photo-128756.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+        <h3>Red Panda</h3>
+        <p>Adorable and endangered. Best viewing in the morning hours.</p>
       </div>
-      <!-- backend developer -->
-      <div class="skill-card">
-        <div class="skill-icon"><i class="fas fa-server"></i></div>
-        <h3>Backend Developer</h3>
-        <p>Node.js, PHP (Laravel), API development, database MySQL/PostgreSQL.</p>
-      </div>
-      <!-- analisis data -->
-      <div class="skill-card">
-        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-        <h3>Analisis Data</h3>
-        <p>Python, Pandas, visualisasi data, insight bisnis, laporan interaktif.</p>
-      </div>
-      <!-- wordpress -->
-      <div class="skill-card">
-        <div class="skill-icon"><i class="fab fa-wordpress"></i></div>
-        <h3>Pengembangan WordPress</h3>
-        <p>Custom themes, plugin, WooCommerce, optimasi kecepatan & SEO.</p>
+      <div class="animal-card">
+        <div class="animal-img" style="background-image: url('https://images.pexels.com/photos/162140/duckling-birds-yellow-fluffy-162140.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+        <h3>Exotic Birds</h3>
+        <p>Walk-in aviary with over 40 colorful species from around the world.</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- kontak & tombol wa + email -->
-  <section id="kontak" class="section">
-    <div class="contact-block">
-      <div class="contact-flex">
-        <div class="contact-left">
-          <h2>Mari berkolaborasi ✨</h2>
-          <p>Butuh bantuan proyek digital? Saya siap membantu mewujudkan ide Anda menjadi nyata.</p>
+  <!-- Experiences highlight -->
+  <div class="container experiences">
+    <h2 class="section-title" style="color:#1e3a2f;">Unforgettable experiences</h2>
+    <p class="section-sub">More than a zoo — adventures that spark curiosity.</p>
+    <div class="exp-grid">
+      <div class="exp-item"><i class="fas fa-camera"></i><h4>Photo Safari</h4><p>Sunrise tours with pro guides</p></div>
+      <div class="exp-item"><i class="fas fa-hand-holding-heart"></i><h4>Keeper Chats</h4><p>Daily encounters & feeding demos</p></div>
+      <div class="exp-item"><i class="fas fa-child"></i><h4>Jungle Gym</h4><p>Nature-inspired playground & splash zone</p></div>
+      <div class="exp-item"><i class="fas fa-moon"></i><h4>Night Safari</h4><p>After-dark wildlife (Fri-Sat)</p></div>
+    </div>
+  </div>
+
+  <!-- Tickets & Plan -->
+  <div class="container">
+    <div class="ticket-section">
+      <div class="ticket-info">
+        <h2>Plan your wild adventure</h2>
+        <p>Flexible day passes, annual memberships, and group discounts.</p>
+        <div class="pricing">$29.90 <small>/ adult • $19.90 / child (3-12)</small></div>
+        <ul class="ticket-features">
+          <li><i class="fas fa-check-circle"></i> All-day access to all habitats</li>
+          <li><i class="fas fa-check-circle"></i> Free guided walking tour (every 2h)</li>
+          <li><i class="fas fa-check-circle"></i> Digital animal guide app included</li>
+          <li><i class="fas fa-check-circle"></i> 10% off in jungle cafe & gift shop</li>
+        </ul>
+        <a href="#" class="btn-primary" style="background:#2b7a3e; box-shadow:none;"><i class="fas fa-ticket-alt"></i> Get tickets now</a>
+        <p style="margin-top: 20px; font-size:0.8rem;">*Kids under 2 enter free. Group rates available.</p>
+      </div>
+      <div class="ticket-image"></div>
+    </div>
+  </div>
+
+  <!-- Testimonial / quote -->
+  <div class="container">
+    <div class="testimonial">
+      <div class="quote">“WildHorizon completely redefined our family day out. The enclosures are massive, the staff is passionate, and we left with memories and a deeper love for wildlife.”</div>
+      <div class="author">— The Martinez Family ★★★★★</div>
+      <div style="text-align:center; margin-top:24px;"><i class="fas fa-map-marker-alt" style="color:#e68a2e;"></i> 1200 Safari Parkway, Green Valley</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4><i class="fas fa-paw"></i> WildHorizon Zoo</h4>
+        <p>Connecting people with nature since 1998.</p>
+        <p>📍 1200 Safari Parkway<br>Green Valley, CA 93940</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#">Hours & Directions</a>
+        <a href="#">Events Calendar</a>
+        <a href="#">Group Bookings</a>
+        <a href="#">Conservation projects</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Adopt an animal</a>
+        <a href="#">Volunteer</a>
+        <a href="#">Donate</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-tiktok"></i>
+          <i class="fab fa-youtube"></i>
         </div>
-        <div class="contact-buttons">
-          <!-- Tombol WhatsApp (mengarah ke nomor +62 823-5249-0597) -->
-          <a href="https://wa.me/6282352490597?text=Halo%20Gracedev%2C%20saya%20tertarik%20dengan%20portofolio%20Anda.%20Mari%20berdiskusi!" 
-             class="wa-btn" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-          </a>
-          <!-- Tombol Email (mailto) -->
-          <a href="mailto:graceshalomitha08022012@gmail.com?subject=Halo%20Gracedev%20-%20Konsultasi%20Proyek&body=Saya%20tertarik%20dengan%20keahlian%20Anda.%20Mohon%20informasi%20lebih%20lanjut." 
-             class="email-btn">
-            <i class="fas fa-envelope"></i> Email Saya
-          </a>
-        </div>
+        <p style="margin-top: 16px;">hello@wildhorizon.com<br>+1 (555) 720-9663</p>
       </div>
     </div>
-  </section>
+    <div class="copyright">
+      © 2026 WildHorizon Zoo & Conservation — Where protection meets adventure. All rights reserved.
+    </div>
+  </div>
+</footer>
 
-  <!-- footer sederhana -->
-  <footer class="footer">
-    <p>© 2025 Gracedev — Profesional Digital Solution |  Hitam · Orange Identity</p>
-    <p style="margin-top: 0.4rem; font-size: 0.75rem;">
-      <i class="fas fa-code"></i> data entry · front end · desain grafis · backend · analisis data · WordPress
-    </p>
-  </footer>
-</div>
-
-<!-- optional smooth scroll & interaksi -->
-<script>
-  // Smooth scroll untuk anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if(targetId === "#" || targetId === "") return;
-      const targetElement = document.querySelector(targetId);
-      if(targetElement) {
-        e.preventDefault();
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-
-  // sedikit efek hover pada tombol tidak wajib, hanya untuk sentuhan
-  console.log("Portfolio Gracedev — siap membantu!");
-</script>
 </body>
 </html>
